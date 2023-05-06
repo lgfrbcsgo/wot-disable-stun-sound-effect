@@ -11,11 +11,6 @@ AUTHOR = "lgfrbcsgo"
 NAME = "Disable Stun Sound Effect"
 DESCRIPTION = "This mod disables the stun sound effect when you're stunned by arty."
 
-SOURCES = [
-    "gui",
-    "mod_disable_stun_sound_effect",
-]
-
 RELEASE_DEPENDENCIES = [
     "https://github.com/lgfrbcsgo/wot-hooking/releases/download/v0.1.1/lgfrbcsgo.hooking_0.1.1.wotmod",
 ]
@@ -26,7 +21,7 @@ def clean():
     subprocess.check_call(["rm", "-rf", "dist"])
 
 
-@task()
+@task(clean)
 def wotmod():
     # clean dist directory
     subprocess.check_call(["rm", "-rf", "dist/wotmod"])
@@ -37,8 +32,7 @@ def wotmod():
     subprocess.check_call(["mkdir", "-p", source_dst])
 
     # copy sources
-    for source in SOURCES:
-        subprocess.check_call(["cp", "-r", source, source_dst])
+    subprocess.check_call(["cp", "-r", "src/.", source_dst])
 
     # compile sources
     subprocess.check_call(["python2.7", "-m", "compileall", source_dst])
