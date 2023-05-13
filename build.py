@@ -12,7 +12,7 @@ NAME = "Disable Stun Sound Effect"
 DESCRIPTION = "This mod disables the stun sound effect when you're stunned by arty."
 
 RELEASE_DEPENDENCIES = [
-    "https://github.com/lgfrbcsgo/wot-toolkit/releases/download/v0.1.0/lgfrbcsgo.toolkit_0.1.0.wotmod",
+    "https://github.com/lgfrbcsgo/wot-toolkit/releases/download/v0.1.1/lgfrbcsgo.toolkit_0.1.1.wotmod",
 ]
 
 
